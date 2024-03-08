@@ -1,0 +1,48 @@
+
+1. PERMISOS:=================================================================
+
+1.1. Permisos permanentes:
+
+1.1.1 Agregar usuario en uso al grupo Docker
+	
+	https://docs.docker.com/engine/install/linux-postinstall/
+
+	1. Crear grupo docker
+
+		sudo groupadd docker
+		
+	2. Agregar actual usuario al grupo de docker
+
+		sudo usermod -aG docker $USER
+		
+	3. Activar los cambios
+		
+		newgrp docker
+
+1.2. Permisos temporales:
+
+	1. Otorga permiso temporal a cualquier usuario para el uso de docker hasta que se 
+		reinicie el sistema
+		
+		sudo chmod 666 /var/run/docker.sock
+
+	2.
+		sudo systemctl restart docker
+    
+2. LOGS:=================================================================
+
+	https://docs.docker.com/config/containers/logging/json-file/
+
+	1. Abrir archivo daemon.json para configurar archivos de LOGS
+
+		sudo nano /etc/docker/daemon.json
+		
+	2. Editar el archivo daemon.json con el siguiente contenido:
+
+	{
+	  "log-driver": "json-file",
+	  "log-opts": {
+		"max-size": "10m",
+		"max-file": "3"
+	  }
+	} 

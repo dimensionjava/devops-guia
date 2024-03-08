@@ -1,0 +1,22 @@
+
+1. No actualiza los paquetes en sí, pero te proporciona información sobre 
+   las actualizaciones disponibles
+   
+   sudo apt update
+   
+2. Muestra una lista de las de openjdk disponibles
+   
+   apt search openjdk
+
+3. Seleccionar openjdk-17 e instalar
+   
+   sudo apt install openjdk-17-jdk
+
+4. Muestra la version del java
+   
+   java -version
+   
+   javac -version
+  
+  
+  

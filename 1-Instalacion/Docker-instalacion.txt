@@ -1,0 +1,70 @@
+
+Los videos de instalacion estan al final de las instrucciones
+pero es preferible guiarse de la Documentacion oficial:
+
+Documentacion oficial:
+https://docs.docker.com/engine/install/ubuntu/
+
+1. No actualiza los paquetes en sí, pero te proporciona información sobre 
+   las actualizaciones disponibles
+   
+   sudo apt update
+
+2. Instalan herramientas y certificados necesarios para garantizar conexiones
+   seguras y facilitar la administración de paquetes
+   
+   sudo apt install ca-certificates curl
+
+3. Crea un directorio llamado “keyrings” en la ubicación “/etc/apt” con permisos 
+   específicos para el propietario, el grupo y otros usuarios
+   
+   sudo install -m 0755 -d /etc/apt/keyrings
+
+4. Descarga la clave pública de Docker, la convierte en un formato utilizable y 
+   la guarda en el archivo /etc/apt/keyrings/docker.gpg
+  
+   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+
+5. Otorga permisos de lectura a todos los usuarios para el archivo docker.gpg 
+   ubicado en el directorio /etc/apt/keyrings
+   
+   sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+6. Agrega una línea al archivo docker.list en el directorio /etc/apt/sources.list.d/, que especifica la ubicación 
+   del repositorio de Docker para Ubuntu
+   
+  echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+7.  
+  sudo apt update
+
+8.
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+9.
+  sudo service docker restart
+  
+10. 
+  sudo docker run hello-world
+  
+11. Version de docker
+  
+  sudo docker --version
+  
+12. Version de docker compose
+  
+  sudo docker compose version
+  
+NOTA: Los videos de instalacion estan en el siguiente enlace:
+
+	https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/learn/lecture/32204576#notes
+   
+   	https://www.youtube.com/watch?v=HzJsX4WTxnM&list=PLAdTNzDIZj_8qXuqxFudMEiPY4ryVKMkI
+	7 min. 15 seg
+
+  
+  
+  

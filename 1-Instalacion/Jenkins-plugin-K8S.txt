@@ -1,0 +1,78 @@
+
+JENKINS-PLUGIN-K8S
+
+1. En el panel de JENKINS:
+ 
+ 1.1. Descargar plugin:
+ 
+		Dashboard--> Manage Jenkins --> Plugins--> Available plugins
+		Ingresar "kubernetes"
+		
+		Elegir plugin "kubernetes"
+		"This plugin integrates jenkins with Kubernetes"
+	  
+2. En el localhost (Ubuntu):
+   
+ https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/learn/lecture/25600410#notes
+ 
+ 2.1. Crear "service account" en kubernetes:
+		
+		kubectl apply -f jenkins-account.yaml
+	  
+ 2.2. Crear token en kubernetes:
+ 
+      kubectl create token jenkins --namespace default --duration=8760h
+	  "token generado"
+	  
+ 2.3. Mostrar datos del cluster:
+ 
+		kubectl config view
+			- certificate-authority: "ruta del certificado"
+			- certificate-authority: /home/michaeladmin/.minikube/ca.crt
+			
+			- server: https://192.168.49.2:8443
+			
+ 2.4. Mostrar certificado:
+ 
+		nano /home/michaeladmin/.minikube/ca.crt
+		"certificado"
+ 
+3. En el panel de JENKINS:
+ 
+ 3.1. Crear credencial:
+ 
+		Dashboard--> Manage Jenkins--> Credentials-->
+		Stores scoped to Jenkins--> System-->
+		Global credentials-->		
+			+Add Credentials
+		
+	    Kind: 
+			Secret text
+ 	    Scope: 
+			Global
+	    Secret: 
+			ingresar el "token generado"
+	    ID: 
+			kubernetes-credential
+			
+		Description:
+			kubernetes-credential
+
+ 3.2. Configurar conexion al API del cluster (minikube):
+ 
+        Dashboard--> Manage Jenkins --> Clouds --> + New Cloud
+	   
+			Cloud-name: 
+				cloud-kubernetes
+			Type:
+				Kubernetes
+			Create
+				Kubernetes Cloud details:
+					Kubernetes URL: 
+						https://192.168.49.2:8443
+					Kubernetes server certificate key: 
+						ingresar el "certificado"
+					Disable https certificate check (*)
+					Test Connection
+					
+			

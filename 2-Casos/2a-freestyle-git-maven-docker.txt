@@ -1,0 +1,120 @@
+En Jenkins:
+
+1. Crear job
+
+Dashboard--> +New Item
+	Ingresar nombre de la tarea
+	Elegir "Freestyle project"
+	ok
+
+2. Crear credenciales de acceso a GitHub
+
+Dashboard--> Manage Jenkins
+	Credentials
+		Stores scoped to Jenkins
+			System--> Global credentials--> + Add Credentials
+				New credentials-->
+					Kind:
+						Username with password
+							Scope:
+								Global
+							Username:
+								"nombre de usuario en Github"
+							Password:
+								"token generado en Github"
+							ID:
+								github-credentials
+							Description:
+								github-credentials
+					Create
+
+3. Configurar Jenkins con GitHub
+
+Dashboard--> Seleccionar un job--> 
+	Configure
+		Source Code Managment
+			Git (*)
+				Repositories
+					Repository URL:
+						https://github.com/dimensionjava/devops_udemy.git
+					Credentials:
+						github-credentials
+						
+				Branches to build:
+					master
+						
+		Save
+
+4. Configurar Jenkins con Maven
+
+Dashboard--> Seleccionar un job--> 
+	Configure
+		Build Steps-->
+			Invoke top-level Maven targets-->
+				Maven Version:
+					maven3	
+				Goals:
+					clean install
+				Advanced-->
+					POM:
+						billing/pom.xml
+						
+		Save
+
+5. Crear credenciales de acceso a Docker Hub
+
+Dashboard--> Manage Jenkins
+	Credentials
+		Stores scoped to Jenkins
+			System--> Global credentials--> + Add Credentials
+				New credentials-->
+					Kind:
+						Username with password
+							Scope:
+								Global
+							Username:
+								"nombre de usuario en Docker Hub"
+							Password:
+								"password de Docker Hub"
+							ID:
+								dockerhub-credentials
+							Description:
+								dockerhub-credentials
+					Create
+
+6. Crear "Cloud" para acceder al docker engine
+
+Dashboard--> Clouds--> + New cloud
+	New Cloud
+		Cloud name:
+			docker-cloud
+		Type:
+			Docker
+			
+		Create
+			Docker Cloud details-->
+				Docker Host URI:
+					tcp://127.0.0.1:2375
+
+			Test Connection
+
+7. Configurar Jenkins con Docker
+
+Dashboard--> Seleccionar un job--> 
+	Configure
+		Build Steps-->
+			Build/Publish Docker Image -->
+				Directory for Dockerfile:
+					billing
+				Cloud:
+					docker-cloud
+				Image:
+					dimensionjava/billingapp-backend
+				Build Args:
+					--build-arg JAR_FILE=/target/*.jar
+				Push image (*)
+				Registry Credentials:
+					dockerhub-credentials				
+		Save
+
+8. Ejecutar el job

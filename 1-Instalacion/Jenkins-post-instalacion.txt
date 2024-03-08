@@ -1,0 +1,9 @@
+
+En Ubuntu:
+
+1. Agregar usuario "jenkins" al Docker Group
+	sudo usermod -aG docker jenkins
+		
+2. Activar los cambios		
+	newgrp docker/
+   

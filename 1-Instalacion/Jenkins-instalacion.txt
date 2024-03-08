@@ -1,0 +1,37 @@
+
+Documentacion oficial:
+https://www.jenkins.io/doc/book/installing/linux/
+
+1. descarga la clave pública de Jenkins desde la URL proporcionada y la guarda
+   en el archivo “jenkins-keyring.asc” en la ubicación /usr/share/keyrings/
+   
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+2. Añade el repositorio oficial de Jenkins a la lista de fuentes de software de tu sistema Ubuntu
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+3. 
+sudo apt-get update
+
+4.
+sudo apt-get install jenkins
+
+5.
+sudo systemctl start jenkins.service
+
+6.
+sudo systemctl status jenkins
+
+7. Ingresar al servicio de Jenkins
+
+ http://localhost:8080
+ http://your_server_ip_or_domain:8080
+
+8. Para el ingreso inicial se debe obtener el
+   initialAdminPassword.
+   
+  sudo cat /var/lib/jenkins/secrets/initialAdminPassword

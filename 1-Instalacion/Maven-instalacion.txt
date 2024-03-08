@@ -1,0 +1,34 @@
+
+1. Descargar maven del portal de maven
+
+	https://maven.apache.org/
+
+	Download--> 
+	Elegir "Binary tar.gz archive" (3.9.6)
+
+2. Abrir en una terminal y descomprimir	
+   
+   tar xzvf apache-maven-3.9.6-bin.tar.gz
+   
+3. Mover la carpeta a otra ubicacion	
+   
+   sudo mv apache-maven-3.9.6 /opt/
+   
+4. Configurar variables de entorno en el archivo maven.sh
+
+   sudo nano /etc/profile.d/maven.sh
+   
+	   export MAVEN_HOME=/opt/apache-maven-3.9.6
+	   export PATH=${MAVEN_HOME}/bin:${PATH}
+   
+5. Ejecutar el archivo
+
+	source /etc/profile.d/maven.sh
+	
+6. Mostrar version
+
+	mvn --version
+
+  
+  
+  

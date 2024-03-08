@@ -1,0 +1,51 @@
+
+pipeline {
+    agent any
+    tools {
+        maven 'maven3'
+        jdk 'jdk17'
+    }
+
+    stages {
+        stage('Git checkout') {
+            steps {
+                git credentialsId: 'github-credential', url: 'https://github.com/dimensionjava/devops_udemy.git'
+            }
+        }
+        
+         stage('Build Application') {
+            steps {
+                sh "mvn -f billing/pom.xml clean install"
+                
+            }
+        }
+        
+          stage('Build Docker Image') {
+            steps {
+               script {  
+                   withDockerRegistry(credentialsId: 'dockerhub-credential', toolName: 'docker') {
+                   
+                    sh "docker build --build-arg JAR_FILE=/target/*.jar -t billingapp-backend -f billing/Dockerfile billing/"
+                   
+                   }
+               }
+                
+            }
+        }
+        
+        stage('Tag & Push Docker Image') {
+            steps {
+               script {  
+                   withDockerRegistry(credentialsId: 'dockerhub-credential', toolName: 'docker') {
+                    sh "docker tag billingapp-backend dimensionjava/billingapp-backend:latest"
+                    sh "docker push dimensionjava/billingapp-backend:latest"
+                   }
+               }
+                
+            }
+        }
+        
+    }
+}
+
+

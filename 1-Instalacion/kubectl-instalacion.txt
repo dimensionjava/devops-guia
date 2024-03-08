@@ -1,0 +1,31 @@
+
+Los videos de instalacion estan al final de las instrucciones
+pero es preferible guiarse de la información del portal:
+
+Documentacion oficial:
+https://k8s-docs.netlify.app/en/docs/tasks/tools/install-kubectl/
+
+1. Descargar la ultima version
+
+	curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+   	
+2. Otorgarle permisos de ejecucion	
+   
+	chmod +x ./kubectl
+   
+3. Mover la carpeta a otra ubicacion	
+   
+   sudo mv ./kubectl /usr/local/bin/kubectl	
+	
+4. Mostrar version
+
+	kubectl version --client
+	
+Nota: el video de instalacion esta en el siguiente enlace:
+
+https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/learn/lecture/32177400#notes
+7 min. 18 seg.
+
+  
+  
+  

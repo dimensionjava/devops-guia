@@ -1,0 +1,35 @@
+
+Los videos de instalacion estan al final de las instrucciones
+pero es preferible guiarse de la información del portal:
+
+Documentacion oficial:
+https://minikube.sigs.k8s.io/docs/start/
+
+1. Descargar la ultima version
+
+	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+	
+2. Instalar minikube
+
+	sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   	
+3. Otorgarle permisos	
+   
+	sudo chmod 755 /usr/local/bin/minikube
+	
+4. Mostrar version
+
+	minikube version
+
+5. Iniciar minikube
+
+	minikube start
+		
+	
+Nota: el video de instalacion esta en el siguiente enlace:
+
+https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/learn/lecture/32177978?start=180#overview
+
+  
+  
+  

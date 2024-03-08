@@ -1,0 +1,17 @@
+
+GITHUB:
+
+ 1. Configurar el repositorio de codigo GitHub
+ 
+ 2. Crear un repositorio en GitHub
+ 
+ 3. Crear el repositorio Git local
+ 
+ 4. Sincronizar el repositorio local Git con el repositorio remoto GitHub
+ 
+ 5. Generar token de autenticacion a Github
+		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
+ 
+ 6. Subir el codigo del repositorio local al repositorio remoto GitHub
+
+

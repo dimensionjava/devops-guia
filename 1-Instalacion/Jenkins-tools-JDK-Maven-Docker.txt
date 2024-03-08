@@ -1,0 +1,29 @@
+
+1. Configurar Herramientas
+
+	Dashboard--> Manage Jenkins --> Tools-->
+	
+	JDK	installations--> Add JDK
+		
+		Name: jdk17
+		Install automatically (*)
+			Add Installer: Install from adoptium.net
+			
+			Version: jdk17.0.10
+			
+	Maven installations--> Add Maven
+	
+		Name: maven3
+		Install automatically (*)
+			Install from Apache
+			Version: 3.9.6
+			
+	Docker installations--> Add Docker
+		Name: docker
+		Install automatically (*)
+			Add Installer: Download from docker
+			Docker version: later
+		
+				
+	
+	

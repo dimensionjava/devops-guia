@@ -1,0 +1,20 @@
+
+JENKINS-PLUGIN-K8S
+
+1. Descargar plugin JDK:
+ 
+	Dashboard--> Manage Jenkins --> Plugins--> Available plugins
+	- jdk
+		
+	Elegir plugin "Eclipse Temurin installer"
+	  
+2. Descargar plugins Docker:
+ 
+	Dashboard--> Manage Jenkins --> Plugins--> Available plugins
+	- Docker 
+	- Docker Pipeline
+	- docker-build-step
+
+
+					
+			

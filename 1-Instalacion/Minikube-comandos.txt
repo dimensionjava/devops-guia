@@ -1,0 +1,14 @@
+
+minikube status
+
+minikube stop
+
+minikube dashboard --url 
+	Genera la url, se copia y pega en un navegador
+
+minikube pause
+minikube unpause
+
+minikube config set memory 16384
+
+minikube addons list

@@ -1,0 +1,11 @@
+AGREGAR USUARIOS AL GRUPO DOCKER
+
+	usermod -aG docker	$USER
+	usermod -aG docker	jenkins
+	usermod -aG root	jenkins
+
+Establece permisos de lectura y escritura para el propietario y el grupo
+	chmod 664 /var/run/docker.sock
+
+	
+
