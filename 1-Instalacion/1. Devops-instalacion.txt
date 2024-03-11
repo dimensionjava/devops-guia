@@ -3,11 +3,11 @@
 
 	https://www.youtube.com/watch?v=vG-cIsFnAUY
 	
-2. JDK: Instalacion de JDK de java en ubuntu					
+2. JDK: Instalacion de JDK de java en ubuntu	
 
 	JDK-instalacion.txt
 	
-3. Maven: Instalacion de maven en ubuntu						
+3. Maven: Instalacion de maven en ubuntu	
 
 	Maven-instalacion.txt
 	
@@ -17,21 +17,22 @@
 			Docker-instalacion.txt
    
 	4.2. Post Instalacion:
-	
 			Docker-post-instalacion.txt
 
 5. Virtualizacion en la Bios					
 
-   5.1. Bios: Activar virtualizacion
-		https://www.youtube.com/watch?v=MJ1HGrM5D3Y
-   
-   5.2. Ubuntu: Comprobar si la virtualizacion esta activa
+   5.1. Bios: Activar virtualizacion (localhost)
+      https://www.youtube.com/watch?v=MJ1HGrM5D3Y
 
-		https://k8s-docs.netlify.app/en/docs/tasks/tools/install-minikube/
-		https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/learn/lecture/32177400#notes
-	
-		grep -E --color 'vmx|svm' /proc/cpuinfo
+   5.2.  Activar virtualizacion (virtualbox)
+ en tab config > system > procesador > check habilitar virtualizar vx
    
+   5.3. Ubuntu: Comprobar si la virtualizacion esta activa
+
+https://k8s-docs.netlify.app/en/docs/tasks/tools/install-minikube/
+https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/learn/lecture/32177400#notes	
+grep -E --color 'vmx|svm' /proc/cpuinfo
+
 6. Kubectl: Instalacion en ubuntu									
 
 	kubectl-instalacion.txt
