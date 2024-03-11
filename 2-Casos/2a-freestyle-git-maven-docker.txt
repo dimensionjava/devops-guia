@@ -102,7 +102,7 @@ Dashboard--> Manage Jenkins--> Clouds--> + New cloud
 
 Dashboard--> Seleccionar un job--> 
 	Configure
-		Build Steps-->
+		Build Steps--> Add build step-->
 			Build/Publish Docker Image -->
 				Directory for Dockerfile:
 					billing
