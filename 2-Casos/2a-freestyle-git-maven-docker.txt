@@ -84,7 +84,7 @@ Dashboard--> Manage Jenkins
 
 6. Crear "Cloud" para acceder al docker engine
 
-Dashboard--> Clouds--> + New cloud
+Dashboard--> Manage Jenkins--> Clouds--> + New cloud
 	New Cloud
 		Cloud name:
 			docker-cloud
