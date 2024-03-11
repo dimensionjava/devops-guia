@@ -25,7 +25,7 @@
       https://www.youtube.com/watch?v=MJ1HGrM5D3Y
 
    5.2.  Activar virtualizacion (virtualbox)
- en tab config > system > procesador > check habilitar virtualizar vx
+      config > system > procesador > check habilitar virtualizar vx
    
    5.3. Ubuntu: Comprobar si la virtualizacion esta activa
 
