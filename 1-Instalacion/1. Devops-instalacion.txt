@@ -61,8 +61,10 @@ grep -E --color 'vmx|svm' /proc/cpuinfo
 	
 		Jenkins-tools-JDK-Maven-Docker.txt
 
-9. Docker: Configurar acceso a docker engine, si desde Jenkins se
-		   consume desde un job de tipo "Freestyle"
+9. Docker: Configurar acceso a docker engine
+
+   Se configura en caso de que en Jenkins se consuma
+   el API de Docker desde un job de tipo "Freestyle".
 		
 	Docker-engine-acceso.txt
 	    
