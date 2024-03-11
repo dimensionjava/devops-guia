@@ -49,7 +49,7 @@ Dashboard--> Seleccionar un job-->
 
 Dashboard--> Seleccionar un job--> 
 	Configure
-		Build Steps-->
+		Build Steps--> Add build step-->
 			Invoke top-level Maven targets-->
 				Maven Version:
 					maven3	
