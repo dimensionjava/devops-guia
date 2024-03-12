@@ -17,7 +17,7 @@ JENKINS-PLUGIN-K8S
  
  2.1. Crear "service account" en kubernetes:
       
-      Se debe ejecutar el archivo jenkins-account.yaml 		
+      Abrir la terminal en la ubicacion del archivo jenkins-account.yaml y ejecutar:	
 	kubectl apply -f jenkins-account.yaml
 	  
  2.2. Crear token en kubernetes:
