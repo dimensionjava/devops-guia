@@ -74,7 +74,7 @@ JENKINS-PLUGIN-K8S
 				Kubernetes
 			Create
 				Kubernetes Cloud details:
-					Kubernetes URL: 
+					Kubernetes URL: (Ingresar la direccion del server)
 						https://192.168.49.2:8443
 					Kubernetes server certificate key: 
 						ingresar el "certificado"
