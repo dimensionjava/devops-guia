@@ -79,6 +79,9 @@ JENKINS-PLUGIN-K8S
 					Kubernetes server certificate key: 
 						ingresar el "certificado"
 					Disable https certificate check (*)
+					Credentials:
+						kubernetes-credential
+
 					Test Connection
 					
 			
