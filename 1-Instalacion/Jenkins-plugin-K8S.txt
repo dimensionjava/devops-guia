@@ -16,8 +16,9 @@ JENKINS-PLUGIN-K8S
  https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/learn/lecture/25600410#notes
  
  2.1. Crear "service account" en kubernetes:
-		
-		kubectl apply -f jenkins-account.yaml
+      
+      Se debe ejecutar el archivo jenkins-account.yaml 		
+	kubectl apply -f jenkins-account.yaml
 	  
  2.2. Crear token en kubernetes:
  
