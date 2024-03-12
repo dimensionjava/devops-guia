@@ -31,14 +31,16 @@ JENKINS-PLUGIN-K8S
   2.4. Mostrar datos del cluster:
  
 		kubectl config view
-			- certificate-authority: "ruta del certificado"
+
+			1- certificate-authority: "ruta del certificado"
+			Ejm:
 			- certificate-authority: /home/michaeladmin/.minikube/ca.crt
 			
-			- server: https://192.168.49.2:8443
+			2- server: https://192.168.49.2:8443
 			
   2.5. Mostrar certificado:
  
-		nano /home/michaeladmin/.minikube/ca.crt
+		nano "ruta del certificado"
 		"certificado"
  
 3. En el panel de JENKINS:
