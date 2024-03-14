@@ -41,7 +41,7 @@ JENKINS-PLUGIN-K8S
   2.5. Mostrar certificado:
  
 		nano "ruta del certificado"
-		"certificado"
+			"certificado"
  
 3. En el panel de JENKINS:
  
@@ -59,10 +59,10 @@ JENKINS-PLUGIN-K8S
 	    Secret: 
 			ingresar el "token generado"
 	    ID: 
-			kubernetes-credential
+			kubernetes-credentials
 			
 		Description:
-			kubernetes-credential
+			kubernetes-credentials
 
  3.2. Configurar conexion al API del cluster (minikube):
  

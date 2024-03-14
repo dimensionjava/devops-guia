@@ -1,5 +1,5 @@
 
-pipeline {
+	pipeline {
     agent any
     tools {
         maven 'maven3'
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git credentialsId: 'github-credential', url: 'https://github.com/dimensionjava/devops_udemy.git'
+                git credentialsId: 'github-credentials', url: 'https://github.com/dimensionjava/devops_udemy.git'
             }
         }
         
@@ -45,7 +45,16 @@ pipeline {
             }
         }
         
+        
+     stage('Deploy in Kubernetes') {
+      steps {
+        withCredentials(bindings: [
+            string(credentialsId: 'kubernetes-credential', variable: 'api_token')
+                      ]) {
+       sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f billing/hola-deployment.yml '
+          }
+
+        }
+      }
     }
 }
-
-
