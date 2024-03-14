@@ -1,0 +1,79 @@
+
+1. Instalacion dual boot (Windows 10 pro + Ubuntu 22.04)
+
+	https://www.youtube.com/watch?v=vG-cIsFnAUY
+	
+2. JDK: Instalacion de JDK de java en ubuntu	
+
+	JDK-instalacion.txt
+	
+3. Maven: Instalacion de maven en ubuntu	
+
+	Maven-instalacion.txt
+	
+4. Docker: Instalacion y post instalacion en ubuntu								
+
+	4.1. Instalacion
+			Docker-instalacion.txt
+   
+	4.2. Post Instalacion:
+			Docker-post-instalacion.txt
+
+5. Virtualizacion en la Bios					
+
+   5.1. Bios: Activar virtualizacion (localhost)
+      	https://www.youtube.com/watch?v=MJ1HGrM5D3Y
+
+   5.2.  Activar virtualizacion (Virtualbox)
+   	
+   	En Virtualbox:
+      	config > system > procesador > check habilitar virtualizar vx
+   
+   5.3. Ubuntu: Comprobar si la virtualizacion esta activa
+
+	https://k8s-docs.netlify.app/en/docs/tasks/tools/install-minikube/
+	https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/learn/lecture/32177400#notes	
+	
+	En terminal:
+	grep -E --color 'vmx|svm' /proc/cpuinfo
+
+6. Kubectl: Instalacion en ubuntu									
+
+	kubectl-instalacion.txt
+	
+7. Minikube: Instalacion en ubuntu									
+    
+	minikube-instalacion.txt 
+	
+8. Jenkins
+
+   8.1. Instalacion en ubuntu										
+	
+	Jenkins-instalacion.txt
+		
+   8.2. Post Instalacion										
+	
+	Jenkins-post-instalacion.txt
+		
+   8.3. Instalacion de plugins JDK-Docker  
+				 
+	Jenkins-plugins-JDK-Docker.txt				
+			
+   8.4. Seleccionar tools
+	
+	Jenkins-tools-JDK-Maven-Docker.txt
+
+9. Docker: Configurar acceso a docker engine
+
+   Se configura el acceso al docker engine en caso de que desde Jenkins 
+   se consuma el API de Docker desde un job de tipo "Freestyle".
+		
+	Docker-engine-acceso.txt
+	    
+10. Jenkins: Instalacion de plugin de Kubernetes y configuracion 
+	
+	Jenkins-plugin-K8S.txt
+
+
+
+	
