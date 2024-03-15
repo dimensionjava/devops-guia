@@ -64,6 +64,8 @@ JENKINS-PLUGIN-K8S
 		Description:
 			kubernetes-credentials
 
+		Create
+
  3.2. Configurar conexion al API del cluster (minikube):
  
         Dashboard--> Manage Jenkins --> Clouds --> + New Cloud
@@ -83,5 +85,6 @@ JENKINS-PLUGIN-K8S
 						kubernetes-credential
 
 					Test Connection
+			Save
 					
 			
