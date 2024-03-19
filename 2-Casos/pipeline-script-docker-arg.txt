@@ -9,13 +9,13 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git credentialsId: 'github-credential', url: 'https://github.com/dimensionjava/devops-1-hello.git'
+                git credentialsId: 'github-credential', url: 'https://github.com/dimensionjava/devops_udemy.git'
             }
         }
         
          stage('Build Application') {
             steps {
-                sh "mvn -f hello-app/pom.xml clean install"
+                sh "mvn -f billing/pom.xml clean install"
                 
             }
         }
@@ -25,7 +25,7 @@ pipeline {
                script {  
                    withDockerRegistry(credentialsId: 'dockerhub-credentials', toolName: 'docker') {
                    
-                    sh "docker build -t hello-rest -f hello-app/Dockerfile hello-app/"
+                    sh "docker build --build-arg JAR_FILE=/target/*.jar -t billingapp-backend -f billing/Dockerfile billing/"
                    
                    }
                }
@@ -37,8 +37,8 @@ pipeline {
             steps {
                script {  
                    withDockerRegistry(credentialsId: 'dockerhub-credentials', toolName: 'docker') {
-                    sh "docker tag hello-rest dimensionjava/hello-rest:latest"
-                    sh "docker push dimensionjava/hello-rest:latest"
+                    sh "docker tag billingapp-backend dimensionjava/billingapp-backend:latest"
+                    sh "docker push dimensionjava/billingapp-backend:latest"
                    }
                }
                 
@@ -47,5 +47,4 @@ pipeline {
         
     }
 }
-
 
