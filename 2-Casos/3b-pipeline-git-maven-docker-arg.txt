@@ -55,7 +55,7 @@ Configure--> Pipeline-->
 	Definition:
 		Pipeline script
 			Ingresar el contenido de:
-				 pipeline-script-docker.txt
+				 pipeline-script-docker-arg.txt
 Save
 
 5. Ejecutar el job
