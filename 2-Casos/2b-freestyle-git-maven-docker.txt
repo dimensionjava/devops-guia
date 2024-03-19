@@ -42,6 +42,7 @@ Dashboard--> Seleccionar un job-->
 						
 				Branches to build:
 					master
+						
 		Save
 
 4. Configurar Jenkins con Maven
@@ -56,7 +57,7 @@ Dashboard--> Seleccionar un job-->
 					clean install
 				Advanced-->
 					POM:
-						hello-app/pom.xml					
+						hello-arg-app/pom.xml	
 		Save
 
 5. Crear credenciales de acceso a Docker Hub
@@ -103,11 +104,13 @@ Dashboard--> Seleccionar un job-->
 		Build Steps--> Add build step-->
 			Build/Publish Docker Image -->
 				Directory for Dockerfile:
-					hello-app
+					hello-arg-app
 				Cloud:
 					docker-cloud
 				Image:
-					dimensionjava/hello-rest
+					dimensionjava/hello-arg-rest
+				Build Args:
+					--build-arg JAR_FILE=/target/*.jar
 				Push image (*)
 				Registry Credentials:
 					dockerhub-credentials				
