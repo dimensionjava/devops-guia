@@ -36,7 +36,7 @@ Dashboard--> Seleccionar un job-->
 			Git (*)
 				Repositories
 					Repository URL:
-						https://github.com/dimensionjava/devops_udemy.git
+						https://github.com/dimensionjava/devops-1-hello.git
 					Credentials:
 						github-credentials
 						
