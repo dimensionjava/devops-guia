@@ -10,7 +10,7 @@ GITHUB:
  4. Sincronizar el repositorio local Git con el repositorio remoto GitHub
  
  5. Generar token de autenticacion a Github
-		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
+		El token no se puede almacenar en archivos administrados por GitHub
  
  6. Subir el codigo del repositorio local al repositorio remoto GitHub
 
