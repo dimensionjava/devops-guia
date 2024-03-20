@@ -41,7 +41,8 @@ Dashboard--> Seleccionar un job-->
 						github-credentials
 						
 				Branches to build:
-					master
+					Branch Specifier
+						master
 		Save
 
 4. Configurar Jenkins con Maven
@@ -114,3 +115,11 @@ Dashboard--> Seleccionar un job-->
 		Save
 
 8. Ejecutar el job
+
+9. Probar el contenedor
+
+	Ejecucion en terminal:
+		docker run -p8081:8081 --name cont-hello-rest dimensionjava/hello-rest
+
+	Ejecucion en background:
+		docker run -p8081:8081 --name cont-hello-rest -d dimensionjava/hello-rest

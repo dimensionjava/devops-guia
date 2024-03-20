@@ -60,4 +60,13 @@ Save
 
 5. Ejecutar el job
 
+6. Probar el contenedor
+
+	Ejecucion en terminal:
+		docker run -p8081:8081 --name cont-hello-rest dimensionjava/hello-rest
+
+	Ejecucion en background:
+		docker run -p8081:8081 --name cont-hello-rest -d dimensionjava/hello-rest
+
+
 
