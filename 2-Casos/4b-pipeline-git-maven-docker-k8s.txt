@@ -59,15 +59,15 @@ Configure--> Pipeline-->
 
 Save
 
-5. Ejecutar el job
-
-6. Validar que minikube este  iniciado
+5. Validar que minikube este  iniciado
 
 	Verificar el estado:
 	minikube status
 
 	En caso no este iniciado:
 	minikube start
+
+6. Ejecutar el job
 
 7. Verificar funcionamiento de la aplicacion
 

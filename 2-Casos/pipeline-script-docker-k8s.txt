@@ -1,5 +1,5 @@
 
-	pipeline {
+pipeline {
     agent any
     tools {
         maven 'maven3'
@@ -9,13 +9,13 @@
     stages {
         stage('Git checkout') {
             steps {
-                git credentialsId: 'github-credentials', url: 'https://github.com/dimensionjava/devops_udemy.git'
+                git credentialsId: 'github-credentials', url: 'https://github.com/dimensionjava/devops-2-hello-arg.git'
             }
         }
         
          stage('Build Application') {
             steps {
-                sh "mvn -f billing/pom.xml clean install"
+                sh "mvn -f hello-arg-app/pom.xml clean install"
                 
             }
         }
@@ -25,7 +25,7 @@
                script {  
                    withDockerRegistry(credentialsId: 'dockerhub-credentials', toolName: 'docker') {
                    
-                    sh "docker build --build-arg JAR_FILE=/target/*.jar -t billingapp-backend -f billing/Dockerfile billing/"
+                    sh "docker build --build-arg JAR_FILE=/target/*.jar -t hello-arg-rest -f hello-arg-app/Dockerfile hello-arg-app/"
                    
                    }
                }
@@ -37,24 +37,22 @@
             steps {
                script {  
                    withDockerRegistry(credentialsId: 'dockerhub-credentials', toolName: 'docker') {
-                    sh "docker tag billingapp-backend dimensionjava/billingapp-backend:latest"
-                    sh "docker push dimensionjava/billingapp-backend:latest"
+                    sh "docker tag hello-arg-rest dimensionjava/hello-arg-rest:latest"
+                    sh "docker push dimensionjava/hello-arg-rest:latest"
                    }
                }
                 
             }
         }
-        
-        
-     stage('Deploy in Kubernetes') {
-      steps {
-        withCredentials(bindings: [
-            string(credentialsId: 'kubernetes-credentials', variable: 'api_token')
+                
+        stage('Deploy in Kubernetes') {
+            steps {
+                withCredentials(bindings: [
+                    string(credentialsId: 'kubernetes-credentials', variable: 'api_token')
                       ]) {
-       sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f billing/hola-deployment.yml '
-          }
-
+                    sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f hello-arg-app/hola-deployment.yml '
+                }
+            }
         }
-      }
     }
 }
