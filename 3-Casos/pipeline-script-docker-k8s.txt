@@ -13,14 +13,14 @@ pipeline {
             }
         }
         
-         stage('Build Application') {
+        stage('Build Application') {
             steps {
                 sh "mvn -f hello-arg-app/pom.xml clean install"
                 
             }
         }
         
-          stage('Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                script {  
                    withDockerRegistry(credentialsId: 'dockerhub-credentials', toolName: 'docker') {
@@ -48,7 +48,7 @@ pipeline {
         stage('Deploy in Kubernetes') {
             steps {
                 withCredentials(bindings: [
-                    string(credentialsId: 'kubernetes-credentials', variable: 'api_token')
+                    string(credentialsId: 'kubernetes-credential', variable: 'api_token')
                       ]) {
                     sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f hello-arg-app/hola-deployment.yml '
                 }
