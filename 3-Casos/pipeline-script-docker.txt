@@ -13,14 +13,14 @@ pipeline {
             }
         }
         
-         stage('Build Application') {
+        stage('Build Application') {
             steps {
                 sh "mvn -f hello-app/pom.xml clean install"
                 
             }
         }
         
-          stage('Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                script {  
                    withDockerRegistry(credentialsId: 'dockerhub-credentials', toolName: 'docker') {
@@ -47,5 +47,3 @@ pipeline {
         
     }
 }
-
-
